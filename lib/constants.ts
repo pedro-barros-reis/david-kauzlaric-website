@@ -33,16 +33,22 @@ export const EPISODES = [
     img: "/podcast1.png",
     title: "How BJJ teaches resilience, focus, and problem-solving",
     hasPlay: true,
+    id: 1,
+    date: "Nov 24, 2025"
   },
   {
     img: "/podcast2.png",
     title: "How Predictable Scaling can Help Grow, Scale and Automate your Business in 2026",
     hasPlay: false,
+    id: 2,
+    date: "Nov 24, 2025"
   },
   {
     img: "/podcast3.png",
     title: "Full Marketing Strategy for Business Growth in 2026",
     hasPlay: false,
+    id: 3,
+    date: "Nov 24, 2025"
   },
 ] as const;
 
