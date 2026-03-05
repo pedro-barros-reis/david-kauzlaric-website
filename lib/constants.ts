@@ -18,29 +18,29 @@ export const NAV_LINKS_RIGHT = [
 ] as const;
 
 export const MEDIA_LOGOS = [
-  { src: "/ap-news.svg", alt: "AP News" },
+  { src: "/ap_news.svg", alt: "AP News" },
   { src: "/forbes.svg",  alt: "Forbes" },
-  { src: "/yahoo-news.svg", alt: "Yahoo News" },
-  { src: "/business-insider.svg", alt: "Business Insider" },
+  { src: "/yahoo_news.svg", alt: "Yahoo News" },
+  { src: "/business_insider.svg", alt: "Business Insider" },
   { src: "/newsmax.svg", alt: "Newsmax" },
-  { src: "/apple-news.svg", alt: "Apple News" },
+  { src: "/apple_news.svg", alt: "Apple News" },
   { src: "/inc.svg", alt: "Inc." },
   { src: "/entrepreneur.svg", alt: "Entrepreneur" },
 ] as const;
 
 export const EPISODES = [
   {
-    thumbnail: "/podcast-1.jpg",
+    img: "/podcast1.png",
     title: "How BJJ teaches resilience, focus, and problem-solving",
     hasPlay: true,
   },
   {
-    thumbnail: "/podcast-2.jpg",
+    img: "/podcast2.png",
     title: "How Predictable Scaling can Help Grow, Scale and Automate your Business in 2026",
     hasPlay: false,
   },
   {
-    thumbnail: "/podcast-3.jpg",
+    img: "/podcast3.png",
     title: "Full Marketing Strategy for Business Growth in 2026",
     hasPlay: false,
   },

@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { EPISODES, MEDIA_LOGOS } from "@/lib/constants";
+import { PodcastEpisodesCard } from "@/components/PodcastEpisodeCard";
+import { OrangeButton } from "@/components/OrangeButton";
 
 const NavLink = ({ children }: { children: React.ReactNode }) => (
   <a href="#" className="font-figtree text-[16px] font-bold text-black transition-colors tracking-[2%]">
@@ -10,110 +13,7 @@ const NavLink = ({ children }: { children: React.ReactNode }) => (
   </a>
 );
 
-const OrangeButton = ({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => (
-  <button
-    className={`inline-flex items-center gap-2 bg-[#FF4E26] hover:bg-[#e8401e] text-white text-[15px] font-medium px-6 py-3 rounded-full hover:cursor-pointer transition-colors ${className}`}
-  >
-    {children}
-  </button>
-);
-
-
-const mediaLogos = [
-  { src: "/AP_news.svg", alt: "AP News" },
-  { src: "/Forbes.svg", alt: "Forbes" },
-  { src: "/yahoo_news.svg", alt: "Yahoo News" },
-  { src: "/business_insider.svg", alt: "Business Insider" },
-  { src: "/Newsmax.svg", alt: "Newsmax" },
-  { src: "/apple_news.svg", alt: "Apple News" },
-  { src: "/inc.svg", alt: "Inc." },
-  { src: "/entrepreneur.svg", alt: "Entrepreneur" },
-];
-
-
-const podcastepisodes = [
-  {
-    img: "/podcast1.png",
-    title: "How BJJ teaches resilience, focus, and problem-solving",
-    id: 1,
-    date: "Nov 24, 2025",
-    hasPlay: true,
-  },
-  {
-    img: "/podcast2.png",
-    title: "How Predictable Scaling can Help Grow, Scale and Automate your Business in 2026",
-    id: 2,
-    date: "Nov 24, 2025",
-    hasPlay: false,
-  },
-  {
-    img: "/podcast3.png",
-    title: "Full Marketing Strategy for Business Growth in 2026",
-    id: 2,
-    date: "Nov 24, 2025",
-    hasPlay: false,
-  },
-];
-
-
-const PodcastEpisodesCard = ({
-  img,
-  title,
-  id,
-  date,
-  hasPlay,
-}: {
-  img: string;
-  title: string;
-  id: number,
-  date: string;
-  hasPlay: boolean;
-}) => {
-
-  const textColorClass = hasPlay ? 'text-white' : 'text-black';
-  const textContainerClass = hasPlay ? 'absolute bottom-0 left-0 right-0 p-6 z-20' : 'mt-4'; 
-
-  return (
-    <a
-      href="#"
-      className={`flex flex-col group cursor-pointer relative overflow-hidden rounded-2xl ${textColorClass}`}
-    >
-
-      <div className={`relative w-full aspect-video bg-black rounded-2xl overflow-hidden ${hasPlay ? 'relative h-86.75' : 'aspect-video'}`}>
-        <Image
-          src={img}
-          alt={title}
-          width={380}
-          height={hasPlay ? 347 : 212}
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-
-        {hasPlay && (
-          <>
-            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent z-10 pointer-events-none" />      
-          </>
-        )}
-      </div>
-
-      <div className={textContainerClass}>
-        <p className="text-sm uppercase tracking-wider opacity-80 mb-2">
-          EPISODE # {id} | {date}
-        </p>
-        <h3 className="text-2xl font-bold leading-tight">
-          {title}
-        </h3>
-      </div>
-    </a>
-  );
-};
-
-export default function DavidKauzlaricWebsite() {
+export default function HomeWebsite() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
 
@@ -189,7 +89,7 @@ export default function DavidKauzlaricWebsite() {
       {/* MEDIA LOGOS BAR */}
       <section className="bg-white py-5 px-6">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between flex-wrap gap-6">
-          {mediaLogos.map((logo) => (
+          {MEDIA_LOGOS.map((logo) => (
             <Image key={logo.alt} src={logo.src} alt={logo.alt} width={110} height={25} className="h-5 md:h-6 object-contain opacity-65 grayscale hover:opacity-100 hover:grayscale-0 transition-all"/>
           ))}
         </div>
@@ -226,7 +126,7 @@ export default function DavidKauzlaricWebsite() {
 
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {podcastepisodes.map((ep, i) => (
+            {EPISODES.map((ep, i) => (
               <PodcastEpisodesCard key={i} {...ep} />
             ))}
           </div>
@@ -310,7 +210,7 @@ export default function DavidKauzlaricWebsite() {
       </section>
 
 
-      {/* FROM CTA */}
+      {/* FORM CTA */}
       <section className="bg-[#F5F5F4] flex justify-between w-full px-6  md:py-20 xl:px-0">
         <div id="form" className="relative bg-black z-0 w-full max-w-7xl mx-auto items-center min-h-115 md:min-h-130 rounded-[54px] overflow-hidden flex">
           <Image 
@@ -341,14 +241,14 @@ export default function DavidKauzlaricWebsite() {
                   placeholder="Name"
                   value={firstName} 
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="flex-1 max-w-full lg:max-w-42 bg-white text-black placeholder:text-[#808080] px-5 py-3 rounded-full text-[15px] transition-colors backdrop-blur-sm"
+                  className="flex-1 max-w-full lg:max-w-42 bg-white text-black placeholder:text-[#808080] px-5 py-3 rounded-full outline-none text-[15px] transition-colors backdrop-blur-sm"
                 />
                 <input
                   type="email"
                   placeholder="Email"
                   value={email} 
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 max-w-full lg:max-w-42 bg-white text-black placeholder:text-[#808080] px-5 py-3 rounded-full text-[15px] transition-colors backdrop-blur-sm"
+                  className="flex-1 max-w-full lg:max-w-42 bg-white text-black placeholder:text-[#808080] px-5 py-3 rounded-full outline-none text-[15px] transition-colors backdrop-blur-sm"
                 />
                 <button className="bg-[#FF4E26] hover:bg-[#e8401e] hover:cursor-pointer text-white px-8 py-3 rounded-full font-semibold text-[15px] transition-colors whitespace-nowrap">
                   Subscribe Now

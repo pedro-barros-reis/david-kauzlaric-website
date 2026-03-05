@@ -1,7 +1,7 @@
-import DavidKauzlaricWebsite from "@/inspiration/app";
+import HomeWebsite from "@/website/Home";
 
 export default function Home() {
   return (
-    <DavidKauzlaricWebsite />
+    <HomeWebsite />
   );
 }
