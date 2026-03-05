@@ -83,7 +83,7 @@ export default function HomeWebsite() {
 
           <div className="relative hidden sm:block h-full min-h-130">
             <Image 
-              src="/David-hero.png" 
+              src="/david-hero.png" 
               width={519} 
               height={400} 
               alt="David Kauzlaric" 
@@ -170,7 +170,7 @@ export default function HomeWebsite() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-12 items-center">
 
           <div className="relative w-full h-full">
-            <Image src="/David-about-me.png" alt="David Kauzlaric About me" width={600} height={800} className="w-full h-full rounded-2xl object-cover"/>
+            <Image src="/david-about-me.png" alt="David Kauzlaric About me" width={600} height={800} className="w-full h-full rounded-2xl object-cover"/>
           </div>
 
           <div className="pb-16 md:pb-20">
