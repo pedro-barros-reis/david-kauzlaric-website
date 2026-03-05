@@ -38,7 +38,7 @@ export const EPISODES = [
   },
   {
     img: "/podcast2.png",
-    title: "How Predictable Scaling can Help Grow, Scale and Automate your Business in 2026",
+    title: "How Predictable Scaling can Help Grow, Scale and Automate your Business in 2026",
     hasPlay: false,
     id: 2,
     date: "Nov 24, 2025"
@@ -55,18 +55,18 @@ export const EPISODES = [
 export const FOOTER_COLUMNS = [
   {
     heading: "About David",
-    links: ["AAU", "Holdings", "Coaching", "Speaking", "Consulting", "Our Team", "Partnership"],
+    links: ["About", "Podcast", "Coaching", "Speaking", "Consulting", "Contact", "Sponsorship"],
   },
   {
     heading: "David's Podcast",
-    links: ["All Episodes", "Spotify", "Guesting", "Guests", "Newsletter", "Merch Shop"],
+    links: ["Top Episodes", "Mindset", "Scaling", "Growth", "Automation", "Marketing", "Motivation"],
   },
   {
     heading: "Community",
-    links: ["Books", "Members", "Book a call today"],
+    links: ["Books", "PredictableSacliing.com"],
   },
 ] as const;
 
 export const SOCIAL_PLATFORMS = [
-  "Facebook", "Twitter", "Instagram", "YouTube", "LinkedIn", "TikTok",
+  "facebook", "linkedin", "x", "instagram", "spotify", "youtube",
 ] as const;

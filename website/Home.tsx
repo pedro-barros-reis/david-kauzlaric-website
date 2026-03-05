@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { EPISODES, MEDIA_LOGOS } from "@/lib/constants";
+import { EPISODES, FOOTER_COLUMNS, MEDIA_LOGOS, NAV_LINKS_LEFT, NAV_LINKS_RIGHT, SOCIAL_PLATFORMS } from "@/lib/constants";
 import { PodcastEpisodesCard } from "@/components/PodcastEpisodeCard";
 import { OrangeButton } from "@/components/OrangeButton";
 
@@ -31,9 +31,9 @@ export default function HomeWebsite() {
         <div className="max-w-7xl mx-auto px-6 lg:px-16 h-23 flex items-center justify-between gap-8">
     
           <nav className="hidden md:flex items-center gap-13.5">
-            <NavLink>Podcast</NavLink>
-            <NavLink>Speaking</NavLink>
-            <NavLink>Coaching</NavLink>
+            {NAV_LINKS_LEFT.map((link, i) => (
+              <NavLink key={i}>{link.label}</NavLink>
+            ))}
           </nav>
 
           
@@ -43,9 +43,9 @@ export default function HomeWebsite() {
 
    
           <nav className="hidden md:flex items-center gap-7">
-            <NavLink>Books</NavLink>
-            <NavLink>About</NavLink>
-            <NavLink>Contact</NavLink>
+            {NAV_LINKS_RIGHT.map((link, i) => (
+              <NavLink key={i}>{link.label}</NavLink>
+            ))}
             <button aria-label="Search" className="text-black hover:cursor-pointer">
               <Image src="/search-icon.svg" alt="Search Icon" width={50} height={50} />
             </button>
@@ -280,12 +280,12 @@ export default function HomeWebsite() {
               Terms & Conditions    /   Privacy Policy   /  Sitemap
             </p>
             <div className="flex items-center gap-3">
-              {["facebook", "linkedin", "x", "instagram", "spotify", "youtube"].map((s) => (
+              {SOCIAL_PLATFORMS.map((s, i) => (
                 <Image
                   alt={s}
                   width={24}
                   height={24}
-                  key={s}
+                  key={i}
                   src={`/${s}.svg`}
                   aria-label={s}
                   className="w-6 h-6 rounded-full opacity-80 hover:opacity-100 hover:cursor-pointer transition-colors flex items-center justify-center"
@@ -295,12 +295,12 @@ export default function HomeWebsite() {
           </div>
 
           <div className="footer-sections flex flex-column gap-3 sm:gap-4 lg:gap-20 lg:flex-row md:gap-22">
-            <div>
-              <p className="font-figtree text-[13px] font-extrabold text-black mb-4">
-                About David
+            {FOOTER_COLUMNS.map((col, i) => (
+            <div key={i}>
+              <p className="font-figtree text-[13px] font-extrabold text-black mb-4">{col.heading}
               </p>
               <ul className="space-y-1">
-                {["About David", "Podcasts", "Coaching", "Speaking", "Consulting", "Contact", "Sponsorship"].map((item) => (
+                {col.links.map((item) => (
                   <li key={item}>
                     <a href="#" className="font-inter text-[13px] text-black opacity-80 hover:opacity-100 transition-colors">
                       {item}
@@ -309,38 +309,7 @@ export default function HomeWebsite() {
                 ))}
               </ul>
             </div>
-
-        
-            <div>
-              <p className="font-figtree text-[13px] font-extrabold text-black mb-4">
-                David's Podcast
-              </p>
-              <ul className="space-y-1">
-                {["Top Episodes", "Mindset", "Scalling", "Growth", "Automation", "Marketing", "Motivation"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="font-inter text-[13px] text-black opacity-80 hover:opacity-100 transition-colors">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          
-            <div>
-              <p className="font-figtree text-[13px] font-extrabold text-black mb-4">
-                Community
-              </p>
-              <ul className="space-y-1">
-                {["Books", "PredictableSacling.com"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="font-inter text-[13px] text-black opacity-80 hover:opacity-100 transition-colors">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </footer>
