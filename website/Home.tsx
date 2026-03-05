@@ -60,9 +60,9 @@ export default function HomeWebsite() {
       </header>
 
       {/* HERO */}
-      <section className="relative overflow-hidden min-h-115 md:min-h-130 px-6 md:px-20">
-        <div className="bg-[#111111] max-w-7xl mx-auto px-6 lg:px-12 grid md:grid-cols-2 items-center gap-0 min-h-115 md:min-h-130 rounded-[54px]">
-          <div className="py-14 md:py-20 z-10 relative">
+      <section className="relative px-6 md:px-20">
+        <div className="bg-black max-w-7xl mx-auto pl-6 lg:pl-12 grid md:grid-cols-2 gap-0 min-h-115 md:min-h-130 rounded-[54px] overflow-hidden relative">      
+          <div className="py-14 md:py-20 z-10 relative flex flex-col justify-center h-full pr-6 lg:pr-12">
             <h1 className="font-anton text-white text-[52px] md:text-[128px] leading-[100%] tracking-wide uppercase mb-5">
               DAVID{" "}
               <span className="relative inline-block">
@@ -74,14 +74,21 @@ export default function HomeWebsite() {
             <p className="text-white font-inter text-[16px] md:text-[21px] leading-[132%] max-w-[95%] my-6.75">
               Helping business owners navigate the journey from <strong>"stressed operator" to "wealthy owner"</strong> through strategy, acquisitions and digital dominance.
             </p>
-            <OrangeButton>
-              Work with Me <ArrowRight className="w-4 h-4" />
-            </OrangeButton>
+            <div>
+              <OrangeButton>
+                Work with Me <ArrowRight className="w-4 h-4" />
+              </OrangeButton>
+            </div>
           </div>
 
-         
-          <div className="relative hidden sm:flex justify-end items-end h-full min-h-130">
-            <Image src="/David-hero.png" width={519} height={400} alt="David Kauzlaric" className="absolute bottom-0 right-0 w-129.75 object-contain object-bottom"/>
+          <div className="relative hidden sm:block h-full min-h-130">
+            <Image 
+              src="/David-hero.png" 
+              width={519} 
+              height={400} 
+              alt="David Kauzlaric" 
+              className="absolute inset-0 w-full h-full object-cover object-bottom-right"
+            />
           </div>
         </div>
       </section>
